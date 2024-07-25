@@ -79,6 +79,7 @@ const PeerCall = () => {
       // PeerJS functionality starts
       var peer_params = {
         host: server_host,
+        port: 443,
         path: "/myapp",
       };
       if (server_host === "localhost") peer_params["port"] = 3007;

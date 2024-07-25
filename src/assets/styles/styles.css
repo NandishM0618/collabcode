@@ -1,0 +1,132 @@
+.msg-container {
+  padding: 8px 5px 0px 5px;
+  border-radius: 0 0 0.5em 0.5em;
+}
+
+.send {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 580px;
+  background-color: #1b263b;
+  color: white;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  border-radius: 10px;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #444;
+}
+
+.sidebar-content {
+  padding: 1rem;
+}
+
+.info {
+  position: fixed;
+  bottom: 60px;
+  right: -100%;
+  width: 300px;
+  height: 300px;
+  background-color: #1b263b;
+  color: white;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  border-radius: 10px;
+}
+
+.info.open {
+  right: 0;
+}
+.info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #444;
+}
+
+.senderName {
+  font-size: 12px;
+  font-weight: bolder;
+  color: blueviolet;
+  display: block;
+  margin: 0px;
+}
+
+.receive {
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+}
+
+.msg {
+  padding: 2px 8px;
+  border-radius: 5px;
+  width: max-content;
+}
+
+.send .msg {
+  background-color: rgba(5, 195, 74, 0.629);
+  font-size: 20px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.receive .msg {
+  background-color: rgb(243, 201, 94);
+  font-size: 20px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+.green-dot {
+  height: 10px;
+  width: 10px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.blue-dot {
+  height: 10px;
+  width: 10px;
+  background-color: blue;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}

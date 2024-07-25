@@ -16,9 +16,9 @@ import {
 } from "react-icons/md";
 import Chat from "../components/chat";
 import Info from "../components/info";
-const server = "http://localhost:5000/";
+const server = "https://collabcode-pcx8.onrender.com/";
 
-const server_host = "localhost";
+const server_host = "collabcode-pcx8.onrender.com";
 
 const PeerCall = () => {
   const location = useLocation();

@@ -30,7 +30,7 @@ This project is a real-time collaborative coding platform designed to enhance co
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/NandishM0618/code-collab.git
+   git clone https://github.com/NandishM0618/collabcode.git
    cd code-collab
 
    ```

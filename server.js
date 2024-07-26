@@ -1,4 +1,5 @@
 const express = require("express");
+const { ExpressPeerServer } = require("peer");
 const cors = require("cors");
 const app = express();
 app.use(cors());
@@ -8,6 +9,7 @@ const PORT = process.env.PORT || 5000;
 
 let peers = [];
 
+// Endpoint to join a room
 app.post("/join", (req, res) => {
   const { roomId, userName, peerId } = req.body;
   const existingPeer = peers.find((peer) => peer.peerId === peerId);
@@ -18,6 +20,7 @@ app.post("/join", (req, res) => {
   res.json({ data: roomPeers });
 });
 
+// Endpoint to leave a room
 app.post("/leave", (req, res) => {
   const { roomId, peerId } = req.body;
   peers = peers.filter((peer) => peer.peerId !== peerId);
@@ -25,6 +28,17 @@ app.post("/leave", (req, res) => {
   res.json({ data: roomPeers });
 });
 
-app.listen(PORT, () => {
+// Create an HTTP server and integrate PeerJS
+const server = app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+// Create a PeerJS server
+const peerServer = ExpressPeerServer(server, {
+  path: "/myapp",
+  proxied: true,
+  debug: true,
+});
+
+// Use the PeerJS server in your Express app
+app.use("/myapp", peerServer);

@@ -5,7 +5,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3007;
 
 let peers = [];
 
@@ -35,10 +35,7 @@ const server = app.listen(PORT, () => {
 
 // Create a PeerJS server
 const peerServer = ExpressPeerServer(server, {
-  path: "/myapp",
-  proxied: true,
-  debug: true,
+  path: "/",
 });
 
-// Use the PeerJS server in your Express app
 app.use("/myapp", peerServer);

@@ -8,5 +8,5 @@ export const initSocket = async () => {
     transports: ["websocket"],
   };
 
-  return io("http://localhost:5000", options);
+  return io("https://collabcode-pcx8.onrender.com", options);
 };

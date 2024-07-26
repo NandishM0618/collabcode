@@ -16,9 +16,9 @@ import {
 } from "react-icons/md";
 import Chat from "../components/chat";
 import Info from "../components/info";
-const server = "https://collabcode-pcx8.onrender.com/";
+const server = process.env.REACT_APP_BACKEND_URI;
 
-const server_host = "collabcode-pcx8.onrender.com";
+const server_host = process.env.REACT_APP_BACKEND_HOST;
 
 const PeerCall = () => {
   const location = useLocation();
@@ -79,7 +79,6 @@ const PeerCall = () => {
       // PeerJS functionality starts
       var peer_params = {
         host: server_host,
-        port: 443,
         path: "/myapp",
       };
       if (server_host === "localhost") peer_params["port"] = 3007;

@@ -25,7 +25,9 @@ const Info = ({ isOpen, onClose, roomId }) => {
       </div>
       <div className="p-7">
         <h2 className=" text-xl ">Joining Info</h2>
-        <p className=" text-gray-400 mb-2">http://localhost:5000/{roomId}</p>
+        <p className=" text-gray-400 mb-2">
+          https://collabcode-kohl.vercel.app/{roomId}
+        </p>
         <button
           className=" bg-transparent border border-white hover:scale-105 rounded-md px-2 py-2 font-semibold  flex gap-3 "
           onClick={copyToClipboard}
